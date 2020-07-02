@@ -9,9 +9,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import NewsContainer from "./view/news/NewsContainer";
+import ArticleContainer from "./view/articles/ArticleContainer";
 
 import navigationScreens from './view/navigation/NavigationScreens';
-import allReducers from "./view/common";
+import allReducers from "./view/common/combinedReducers";
 
 let RootStack = createStackNavigator();
 
@@ -30,6 +31,10 @@ export default class App extends Component {
                         <RootStack.Screen
                             name={navigationScreens.NEWS_READER}
                             component={NewsContainer}/>
+                        <RootStack.Screen
+                            name={navigationScreens.ARTICLES}
+                            component={ArticleContainer}
+                            options={( { route } ) => ( { id: route.params.id } )}/>
                     </RootStack.Navigator>
                 </NavigationContainer>
             </Provider>
