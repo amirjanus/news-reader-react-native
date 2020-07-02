@@ -1,12 +1,14 @@
+import keys from "/keys";
+
 class NewsApiService {
 
-    constructor() {
-        this._address = 'https://newsapi.org/v1/articles';
-        this.apiKey = '6946d0c07a1c4555a4186bfcade76398';
+    constructor( apiKey ) {
+        this._url = 'https://newsapi.org/v1/articles';
+        this._apiKey = apiKey;
     }
 
     async getNews( source, sortBy ) {
-        const uri = `${this._address}?source=${source}&sortBy=${sortBy}&apiKey=${this.apiKey}`;
+        const uri = `${this._url}?source=${source}&sortBy=${sortBy}&apiKey=${this._apiKey}`;
 
         let response = await fetch( uri );
 
@@ -15,7 +17,7 @@ class NewsApiService {
 
 }
 
-const newsApiService = new NewsApiService();
+const newsApiService = new NewsApiService( keys.newsApi );
 
 Object.freeze( newsApiService );
 
