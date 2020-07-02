@@ -1,5 +1,5 @@
 import newsDao from './local/newsDb/realm/NewsDao';
-import newsApiService from '/src/model/remote/newsApi/NewsApiService';
+import newsApiService from '../model/remote/newsApi/NewsApiService';
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -7,7 +7,7 @@ import {
     rmArticleToArticleMapper,
     newsApiNewsToNewsMapper,
     newsToRmNewsMapper,
-} from '/src/model/mappers/NewsMapper';
+} from './mappers/NewsMapper';
 
 class NewsRepository {
 

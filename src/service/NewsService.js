@@ -1,4 +1,4 @@
-import newsRepository from '/src/model/NewsRepository';
+import newsRepository from '../model/NewsRepository';
 
 class NewsService {
 

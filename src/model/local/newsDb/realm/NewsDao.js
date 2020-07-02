@@ -1,6 +1,6 @@
 import Realm from 'realm';
 
-import { rmArticleToRmArticleMapper } from '/src/model/mappers/NewsMapper';
+import { rmArticleToRmArticleMapper } from '../../../mappers/NewsMapper';
 
 import configuration from './RealmConfuguration';
 import RmNews from './models/RmNews';
