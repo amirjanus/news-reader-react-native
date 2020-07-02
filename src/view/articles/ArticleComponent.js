@@ -6,6 +6,10 @@ import Carousel from 'react-native-snap-carousel';
 
 import commonStyles from '../common/styles';
 
+/**
+ * Returns Carousel item component.
+ * @param props Props.
+ */
 function ArticlesCarouselItem( props ) {
     return (
         <ScrollView>
@@ -22,6 +26,9 @@ function ArticlesCarouselItem( props ) {
         </ScrollView> );
 }
 
+/**
+ * Component for article screen.
+ */
 class ArticleComponent extends Component {
     componentDidMount() {
         this.props.getArticles( this.props.route.params.id );

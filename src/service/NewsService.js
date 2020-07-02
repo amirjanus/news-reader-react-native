@@ -1,11 +1,19 @@
 import newsRepository from '../model/NewsRepository';
 
+/**
+ * News service implements business logic for News and Article objects.
+ */
 class NewsService {
 
     constructor( newsRepository ) {
         this._newsRepository = newsRepository;
     }
 
+    /**
+     * Return list of latest articles.
+     * @param source News source.
+     * @returns {Promise<{urlToImage: string, description: *, id: *, title: *}[]|*>} List of articles.
+     */
     async getLatestNews( source ) {
         const date = this.subtractMinutesFromDate( 5 );
 
@@ -24,10 +32,20 @@ class NewsService {
         return await this._newsRepository.getCachedArticles( source );
     }
 
+    /**
+     * Return list of articles from local database.
+     * @param source News source.
+     * @returns {Promise<*>} List of articles.
+     */
     async getCachedNews( source ) {
         return await this._newsRepository.getCachedArticles( source );
     }
 
+    /**
+     * Subtracts amount of minutes from current data and returns it.
+     * @param amount Amount of minutes to subtract.
+     * @returns {Date} Subtracted date.
+     */
     subtractMinutesFromDate( amount ) {
         const date = new Date();
 

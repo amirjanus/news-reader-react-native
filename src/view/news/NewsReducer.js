@@ -7,6 +7,9 @@ let initialState = {
     error: false,
 };
 
+/**
+ * Changes store state in response to news actions.
+ */
 export default function newsReducer( state = initialState, action ) {
     switch ( action.type ) {
         case ActionTypes.REQUEST_NEWS:

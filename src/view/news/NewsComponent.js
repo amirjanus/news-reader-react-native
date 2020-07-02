@@ -14,6 +14,10 @@ import {
 import navigationScreens from '../navigation/NavigationScreens';
 import commonStyles from '../common/styles';
 
+/**
+ * Returns FlatList item component.
+ * @param props Props.
+ */
 function ArticlesListItem( props ) {
     return (
         <TouchableWithoutFeedback
@@ -35,6 +39,9 @@ function ArticlesListItem( props ) {
         </TouchableWithoutFeedback> );
 }
 
+/**
+ * Component for news screen.
+ */
 class NewsComponent extends Component {
     state = {
         appState: AppState.currentState,
@@ -51,6 +58,10 @@ class NewsComponent extends Component {
         AppState.removeEventListener( 'change', this._handleAppStateChange );
     }
 
+    /**
+     * Handler that will be called when app goes to background/foreground.
+     * @private
+     */
     _handleAppStateChange = nextAppState => {
         if ( this.state.appState.match( /inactive|background/ ) && nextAppState === 'active' ) {
             this.props.getNews();
@@ -59,6 +70,10 @@ class NewsComponent extends Component {
         this.setState( { appState: nextAppState } );
     };
 
+    /**
+     * Display alert screen.
+     * @private
+     */
     _showAlert() {
         Alert.alert(
             'Error',
@@ -67,6 +82,10 @@ class NewsComponent extends Component {
         );
     }
 
+    /**
+     * Check if there was an error and display alert if it was.
+     * @private
+     */
     _checkForError() {
         if ( this.props.error && !this.state.wasAlertShown ) {
             this.state.wasAlertShown = true;

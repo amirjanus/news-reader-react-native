@@ -1,3 +1,7 @@
+/**
+ * News schema for Realm database.
+ * @type {{name: string, properties: {publishedAt: string, source: string, articles: string}, primaryKey: string}}
+ */
 const RmNews = {
     name: 'News',
     primaryKey: 'source',

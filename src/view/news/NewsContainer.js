@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import NewsComponent from './NewsComponent';
 import { getNews } from "./NewsActions";
 
+/**
+ * Maps data from the store to NewsComponent component.
+ */
 function mapStateToProps( state ) {
     return {
         articles: state.news.items,
@@ -12,6 +15,9 @@ function mapStateToProps( state ) {
     };
 }
 
+/**
+ * Map actions to NewsComponent component.
+ */
 function mapDispatchToProps( dispatch ) {
     return bindActionCreators( { getNews: getNews }, dispatch );
 }

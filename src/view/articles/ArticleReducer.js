@@ -7,6 +7,9 @@ let initialState = {
     items: [],
 };
 
+/**
+ * Changes store state in response to article actions.
+ */
 export default function articles( state = initialState, action ) {
     switch ( action.type ) {
         case ActionTypes.REQUEST_ARTICLES:

@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native';
 
+/**
+ * Styles common to entire app.
+ */
 const styles = StyleSheet.create( {
     screenBackground: {
         backgroundColor: 'white',

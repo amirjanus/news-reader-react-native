@@ -6,6 +6,10 @@ export const ActionTypes = {
     ERROR: 'ERROR'
 };
 
+/**
+ * Action to notify store that the user has requested news.
+ * @returns {{type: string, articles: []}}
+ */
 function requestNews() {
     return {
         type: ActionTypes.REQUEST_NEWS,
@@ -13,6 +17,11 @@ function requestNews() {
     };
 }
 
+/**
+ * Action to send article data to the store.
+ * @param articles List of articles.
+ * @returns {{type: string, error: boolean, articles: *}}
+ */
 function receiveNews( articles ) {
     return {
         type: ActionTypes.RECEIVE_NEWS,
@@ -21,6 +30,10 @@ function receiveNews( articles ) {
     };
 }
 
+/**
+ * Action to send error data to the store.
+ * @returns {{type: string, error: boolean, articles: []}}
+ */
 function error() {
     return {
         type: ActionTypes.ERROR,
@@ -29,6 +42,9 @@ function error() {
     };
 }
 
+/**
+ * Starts process of getting news data.
+ */
 export function getNews() {
     return async function( dispatch ) {
         dispatch( requestNews() );

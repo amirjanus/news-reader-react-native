@@ -1,5 +1,6 @@
 import 'react-native-get-random-values';
 import React, { Component } from 'react';
+import { StatusBar } from 'react-native';
 
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -26,6 +27,8 @@ export default class App extends Component {
     render() {
         return (
             <Provider store={store}>
+                <StatusBar
+                    backgroundColor='#314090'/>
                 <NavigationContainer>
                     <RootStack.Navigator>
                         <RootStack.Screen

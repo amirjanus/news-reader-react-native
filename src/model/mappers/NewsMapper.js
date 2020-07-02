@@ -1,3 +1,8 @@
+/**
+ * Maps RmArticle object to RmArticle object.
+ * @param rmArticle Object to map.
+ * @returns {{urlToImage: (string|string), description: *, id: *, title: *}} Mapped object.
+ */
 export function rmArticleToRmArticleMapper( rmArticle ) {
     return {
         id: rmArticle.id,
@@ -7,6 +12,11 @@ export function rmArticleToRmArticleMapper( rmArticle ) {
     };
 }
 
+/**
+ * Maps RmArticle object to Article object.
+ * @param rmArticle Object to map.
+ * @returns {{urlToImage: (string|string), description: *, id: *, title: *}} Mapped object.
+ */
 export function rmArticleToArticleMapper( rmArticle ) {
     return {
         id: rmArticle.id,
@@ -16,6 +26,11 @@ export function rmArticleToArticleMapper( rmArticle ) {
     };
 }
 
+/**
+ * Maps Article object to RmArticle object.
+ * @param article Object to map.
+ * @returns {{urlToImage: (string|string), description: *, title: *}} Mapped object.
+ */
 export function articleToRmArticleMapper( article ) {
     return {
         title: article.title,
@@ -24,6 +39,11 @@ export function articleToRmArticleMapper( article ) {
     };
 }
 
+/**
+ * Maps News object to RmNews object.
+ * @param news Object to map.
+ * @returns {{publishedAt: (string|string), source: *, articles: {urlToImage: string, description: *, title: *}[]}} Mapped object.
+ */
 export function newsToRmNewsMapper( news ) {
     return {
         source: news.source,
@@ -32,6 +52,11 @@ export function newsToRmNewsMapper( news ) {
     };
 }
 
+/**
+ * Maps NewsApi Article object to Article object.
+ * @param newsApiArticle Object to map.
+ * @returns {{urlToImage: (string|string), description: *, title: *}} Mapped object.
+ */
 export function newsApiArticleToArticle( newsApiArticle ) {
     return {
         title: newsApiArticle.title,
@@ -40,6 +65,11 @@ export function newsApiArticleToArticle( newsApiArticle ) {
     };
 }
 
+/**
+ * Maps NewsApi News object to News object.
+ * @param newsApiNews Object to map.
+ * @returns {{source: *, articles: {urlToImage: string, description: *, title: *}[]}} Mapped object.
+ */
 export function newsApiNewsToNewsMapper( newsApiNews ) {
     return {
         source: newsApiNews.source,
