@@ -1,4 +1,4 @@
-import newsDao from './realm/NewsDao';
+import newsDao from './local/newsDb/realm/NewsDao';
 import newsApiService from '/src/model/remote/newsApi/NewsApiService';
 
 import { v4 as uuidv4 } from 'uuid';
